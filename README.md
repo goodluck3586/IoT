@@ -1,6 +1,7 @@
 NodejsServerAndroid
 
 1. Arduino
+
  가. 회로 구성
   - Arduino에 제어할 LED(3개)와 조도센서를 연결한다.
  나. 제어 코드 작성
