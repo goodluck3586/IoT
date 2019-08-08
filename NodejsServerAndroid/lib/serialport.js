@@ -63,6 +63,7 @@ exports.ledState = function(){
   return ledStateArray;
 }
 
+// 조도센서값을 반환하는 함수
 exports.lightSensorValue = function(){
   let lightSensorValue = arduinoLight;
   if(lightSensorValue !== undefined){

@@ -19,8 +19,7 @@ app.use(express.urlencoded({extended:true}));
 
 var serialRouter = require('./routes/serialRouter');
 
-// socket.io를 이용한 통신
-// socket.io 클라이언트 연결
+// socket.io를 이용한 통신, socket.io 클라이언트 연결
 io.on('connection', (socket) => {
   var ip = socket.request.connection.remoteAddress;
   console.log('클라이언트 socket 연결 성공', ip);
