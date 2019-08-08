@@ -7,6 +7,7 @@ NodejsServerAndroid
   - socketIOSerialTestWithString.ino
 
 2. Node.js
+
  가. Arduino 제어 : (./lib/serialport.js)
    - serialport 모듈을 사용하여 node.js와 arduino가 시리얼 통신이 되도록 만든다.
    - ledCtrl : 연결된 3개의 led를 제어하는 함수
