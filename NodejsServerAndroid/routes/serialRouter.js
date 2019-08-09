@@ -24,21 +24,6 @@ router.get('/ctrl/:command', function(req, res){
       break; 
   }
   res.redirect('/');
-})
-
-router.get('/ledState', function(req, res){
-  // let ledState = arduino.ledState();
-  // if(ledState !== undefined){
-  //   var result = ledState.substring(9, 12);
-  //   console.log(`ledState : ${result}`);
-
-  //   var ledStateArray = new Array();  // led의 상태를 저장한 배열
-  //   for(var i=0; i<3; i++){
-  //     ledStateArray.push(result[i]=='1');
-  //   }
-  //   console.log('ledStateArray : ', ledStateArray);
-  // }
-  res.redirect('/test');
-})
+});
 
 module.exports = router;

@@ -29,12 +29,13 @@ void loop() {
       digitalWrite(ledPin3, LOW);
 
     // led들의 상태 전송
-    static unsigned long ledTick = millis();
-    if ( ( millis() - ledTick) > 100 )
-    {
-      Serial.println(getLedState()); // 전송되는 문자열 형태: "led_state000\r\n"
-      ledTick = millis();
-    }
+    Serial.println(getLedState()); // 전송되는 문자열 형태: "led_state000\r\n"
+//    static unsigned long ledTick = millis();
+//    if ( ( millis() - ledTick) > 100 )
+//    {
+//      Serial.println(getLedState()); // 전송되는 문자열 형태: "led_state000\r\n"
+//      ledTick = millis();
+//    }
   }
 
   // A3에 연결된 Light 센서 값을 읽어오는 시간 설정

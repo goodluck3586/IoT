@@ -14,29 +14,22 @@ const port = new Serialport("COM9", {
 
 // 연결이 성공하면 발생하는 이벤트
 port.on('open', function(){
-  console.log('open 이벤트 발생');
+  console.log('Arduino가 연결되어 serialport open 이벤트 발생');
 })
 
 // Arduino에서 data가 넘어올 때 발생하는 이벤트
 let arduinoData, arduinoLED, arduinoLight;
-var parser = port.pipe(new Readline({delimiter: '\r\n'}));
+var parser = port.pipe(new Readline({delimiter: '\r\n'}));  // serialport pipe 연결
+
 parser.on('data', function(data){
   arduinoData = data;
-  // console.log('data received: ' + arduinoData);
-  
+  // 넘어온 data가 led인지 light sensor인지 구분하여 처리
   if(data.substring(0,3)=='led'){
     arduinoLED = data;
   }else if(data.substring(0,3)=='Lig'){
     arduinoLight = data.substring(5, 8);
-    // console.log(arduinoLight);
   }
-})
-
-// let arduinoLED;
-// port.on('data', function(data){
-//   arduinoLED = data;
-//   console.log('data received: ' + arduinoLED);
-// })
+});
 
 // 아두이노로 LED 제어 데이터를 전송하는 함수.
 exports.ledCtrl = function(command){

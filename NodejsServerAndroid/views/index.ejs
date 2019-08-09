@@ -2,14 +2,13 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Hello World</title>
+  <title>Node.js 서버를 통한 Android 장치 제어</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,6 +41,11 @@
         $('#LightSensorValue').html(data);  // 조도센서값 표시 부분 html 값 수정
         console.log(`조도센서값: , ${data}`);
       });
+
+      // // led 상태값을 받아 html의 텍스트 수정
+      // socket.on('ledState', function(data){
+      //   console.log('ledState : ' + data);
+      // });
 
       socket.on('disconnect', function(){
         console.log('웹소켓 서버에 연결이 종료되었습니다.');
